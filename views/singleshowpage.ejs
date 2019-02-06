@@ -1,0 +1,67 @@
+<% include partials/header.ejs %>
+
+
+
+<div class="container con-center" style="margin-top:2%; color:black;">
+<div class="jumbotron jumbo-center" style="padding-left:8%;">
+  <h1 class="display-4"><i class="fas fa-camera-retro "></i> The Movies!</h1>
+  <p class="lead">List of movies related to the title! <i class="far fa-grin-tongue-squint"></i></p>
+  <form method="GET" action="/mymovie">
+    <!--<div class="stretch"></div>-->
+<div class="form-group" >
+    <input type="text" name="title" placeholder="enter the movie name"  style="width:45%; ">
+</div>
+<div class="form-group">
+    <button class="btn btn-lg btn-primary "  style="width:25%;">SEARCH</button>
+</div>
+</form>
+
+
+<form method="GET" action="/myonlymovie">
+<!--<div class="stretch"></div>-->
+<div class="form-group" style="display:inline;width:100%;" >
+<input type="text" name="t" placeholder="enter the movie name"  style="text-align:center;margin-bottom:2%;width:45% ">
+</div>
+<div class="form-group" style="display:inline;width:100%;margin-left:5%;">
+<input type="number" name="y" placeholder="enter the year of release"  style="text-align:center; margin-bottom:2%;width:45%">
+</div>
+<div class="form-group">
+<button class="btn btn-lg btn-primary "  style="width:25%;">SUBMIT</button>
+</div>
+</form>
+
+
+
+
+
+
+</div>
+
+<div class="row" >
+
+    <div class="col-sm-12 col-md-6 col-lg-4">
+     
+         <div class="card" style="width: 328px;height:540px;margin:10px;background:black;color:white;"> 
+         <img src="<%= data.Poster %>" class="card-img-top" alt="Card image cap" >
+         <div class="card-body">
+         <h5 class="card-title" style="padding:auto;"><%= data %> (<%=data.Year %>)</h5>
+        </div>
+    </div>
+    </div>
+  
+  
+
+</div>
+</div>
+<% include partials/footer.ejs %>
+
+
+
+
+
+
+
+
+
+
+

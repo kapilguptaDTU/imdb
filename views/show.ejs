@@ -1,0 +1,52 @@
+<% include partials/header.ejs %>
+<div class="container con-center" style="margin-top:2%; color:black;">
+ 
+<h1 style="color:white;text-align:center;font-family: 'Handlee', cursive;"><%= data.Title.toUpperCase() %> (<%=data.Year %>)</h1>
+
+
+
+<div class="row" >
+
+    <div class="col-sm-12 col-md-6 col-lg-4" style="margin:5% 20%">
+     
+         <div class="card" style="width: 550px;height:auto;margin:auto 20px;background:black;color:white;"> 
+         <img src="<%= data.Poster %>" class="card-img-top" alt="Card image cap" >
+         <div class="card-body">
+         <h5 class="card-title" style="text-align:center;"><%= data.Title %> </h5>
+         <h5 class="card-title" style="text-align:center;">RELEASED:<%= data.Released %></h5>
+         <h5 class="card-title" style="text-align:center;">DIRECTOR:<%= data.Director %></h5>
+         <h5 class="card-title" style="text-align:center;">ACTORS:</h5>
+         <h5 class="card-title" style="text-align:center;"><%= data.Actors %></h5>
+         <h5 class="card-title" style="text-align:center;">IMDB RATING:   <%= data.imdbRating %> IMDB ID:    <%= data.imdbID %></h5>
+         <h5 class="card-title" style="text-align:center;">PLOT:</h5>
+         <h5 class="card-title" style="text-align:center;"><%= data.Plot %></h5>
+         <form style="display: inline" action="/mymovie?t=" method="GET">
+            
+<div class="form-group" style="display:inline;width:100%;margin-left:5%;">
+<input type="text" name="title" value="<%= maintitle %>"  style="text-align:center;margin-bottom:2%;width:45%;display:none; ">
+</div>
+
+            
+  <button class="btn btn-lg btn-primary " style="margin: 12%;">RETURN</button>
+</form>
+        </div>
+    </div>
+    </div>
+  
+  
+
+</div>
+</div>
+
+<% include partials/footer.ejs %>
+
+
+
+
+
+
+
+
+
+
+
