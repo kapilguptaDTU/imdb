@@ -1,6 +1,7 @@
 var express= require("express");
 var app=express();
 var request=require("request");
+app.use(express.static(__dirname + "/public"));
 
  app.get("/",function(req, res) {
      res.render("home.ejs");
@@ -40,7 +41,10 @@ if(parsedData.Response=='True'){
 
 
  
+ app.get("/2048",function(req,res){
  
+  res.render("2048.ejs");
+ });
  app.get("/mymovie",function(req,res){
     var title= req.query.title;
     console.log("req query dsfsfdsfdsdffdsfdsfsdfdsfsfsfs"+req.query);
