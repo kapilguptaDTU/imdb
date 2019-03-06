@@ -45,6 +45,9 @@ if(parsedData.Response=='True'){
  
   res.render("2048.ejs");
  });
+ app.get("/snakes",function(req, res) {
+     res.render("snakesandladders.ejs");
+ })
  app.get("/mymovie",function(req,res){
     var title= req.query.title;
     console.log("req query dsfsfdsfdsdffdsfdsfsdfdsfsfsfs"+req.query);
