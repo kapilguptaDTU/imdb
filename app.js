@@ -1,3 +1,6 @@
+
+
+
 var express= require("express");
 var app=express();
 var request=require("request");
@@ -96,5 +99,15 @@ if(parsedData.Response=='True'){
 
 
 
+// app.listen(process.env.PORT,process.env.IP);
+// console.log("IMDb started",process.env.PORT,process.env.IP);
+// var server = app.listen(8081, function () {
+//     var host = server.address().address
+//     var port = server.address().port
+ 
+//     console.log("Example app listening at http://%s:%s", host, port)
+//  })
+
+
 app.listen(process.env.PORT,process.env.IP);
-console.log("IMDb started");
+console.log("IMDb V2 started");

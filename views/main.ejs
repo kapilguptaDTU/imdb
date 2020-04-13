@@ -6,19 +6,21 @@
    
    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
 <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-   <style>
-       a{color:white;}
-   </style>
+<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/normal.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/rating.css">
+
+   
     </head>
     
-    <body style=" background-image: url('http://images.unsplash.com/photo-1530482817083-29ae4b92ff15?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9');background-attachment:fixed; background-size: cover;">
-      
-      
-     <nav class=" navbar navbar-light bg-dark " >
+    <body>
+        
+        <nav class=" navbar navbar-light bg-dark " style="background-color:#0000003d!important;" >
          <div class="container-fluid">
              <div class="navbar-header">
-                 <a class="navbar-brand" href="/" >IMDB CLONE</a>
+                 <a class="navbar-brand" style="color: #e7d8d8;" href="/" >IMDB CLONE</a>
              </div>
                <!--      <div class="nav navbar-right">-->
                          
@@ -35,32 +37,32 @@
 
 
 
-<div class="container con-center" style="margin-top:2%; color:black;">
-<div class="jumbotron jumbo-center" style="padding-left:8%;">
-  <h1 class="display-4"><i class="fas fa-camera-retro "></i> The Movies!</h1>
-  <p class="lead">List of movies related to the title! <i class="far fa-grin-tongue-squint"></i></p>
+<div class="container con-center">
+<div class="jumbotron jumbo-center" style="    background-color: #000000a6;">
+  <h1 class="display-4" style="color:wheat;"><i class="fas fa-camera-retro "></i> The Movies!</h1>
+  <p class="lead" style="color:wheat;">List of movies related to the title! <i class="far fa-grin-tongue-squint"></i></p>
   <form method="GET" action="/mymovie">
     <!--<div class="stretch"></div>-->
 <div class="form-group" >
-    <input type="text" name="title" placeholder="enter the movie name"  style="width:45%; ">
+    <input type="text" name="title" placeholder="enter the movie series name"  style="width:45%; ">
 </div>
 <div class="form-group">
-    <button class="btn btn-lg btn-primary "  style="width:25%;">SEARCH</button>
+    <button class="btn btn-md btn-success "  style="width:25%;">SEARCH</button>
 </div>
 </form>
-
+<p><br></p>
 
 
 <form method="GET" action="/myonlymovie">
 <!--<div class="stretch"></div>-->
-<div class="form-group" style="display:inline;width:100%;" >
-<input type="text" name="t" placeholder="enter the movie name"  style="text-align:center;margin-bottom:2%;width:45% ">
+<div class="form-group" class="tinline w100">
+<input type="text" name="t" placeholder="enter the movie name" class="tinline" style="margin-bottom:2%;width:45% ">
 </div>
-<div class="form-group" style="display:inline;width:100%;margin-left:5%;">
-<input type="number" name="y" placeholder="enter the year of release"  style="text-align:center; margin-bottom:2%;width:45%">
+<div class="form-group" class="tinline w100" style="margin-left:5%;">
+<input type="number" name="y" placeholder="enter the year of release" class="tinline" style=" margin-bottom:2%;width:45%">
 </div>
 <div class="form-group">
-<button class="btn btn-lg btn-primary "  style="width:25%;">SUBMIT</button>
+<button class="btn btn-md btn-success "  style="width:25%;margin-top: -54px;">SUBMIT</button>
 </div>
 </form>
 
@@ -72,27 +74,39 @@
   
   
   
-    <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
      
-         <div class="card" style="width: 328px;height:600px;margin:10px;background:black;color:white;"> 
+         <div class="card"> 
          <img src="<%= movie.Poster %>" class="card-img-top" alt="Card image cap" >
          <div class="card-body">
-         <h5 class="card-title" style="padding:auto;"><%= movie.Title %> (<%= movie.Year %>)</h5>
+         <h5 class="card-title"><%=movie.Title %> (<%= movie.Year %>)</h5>
+         <!-- <fieldset class="rating">
+    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+</fieldset> -->
         </div>
         
         <form style="display: inline" action="/myonlymovie?t=&y=" method="GET">
             
-<div class="form-group" style="display:inline;width:100%;margin-left:5%;">
-<input type="text" name="t" value="<%= movie.Title %>"  style="text-align:center;margin-bottom:2%;width:45%;display:none; ">
+<div class="form-group">
+<input type="text" name="t" value="<%= movie.Title %>" class="ss" >
 </div>
-<div class="form-group" style="width:100%;margin-left:5%;display:inline;">
-<input type="text" name="maintitle" value="<%= mymaintitle %>"  style="text-align:center;margin-bottom:2%;width:45%;display:none; ">
+<div class="form-group">
+<input type="text" name="maintitle" class="ss" value="<%= mymaintitle %>">
 </div>
-<div class="form-group" style="display:inline;width:100%;margin-left:5%;">
-<input type="number" name="y" value="<%= movie.Year %>"  style="text-align:center; margin-bottom:2%;width:45%;display:none;" >
+<div class="form-group">
+<input type="number" class="ss" name="y" value="<%= movie.Year %>">
 </div>
             
-  <button class="btn btn-lg btn-primary " style="margin: auto;">SHOW MORE</button>
+  <button class="btn btn-lg btn-primary " style="margin: 20px;">SHOW MORE</button>
 </form>
         
     </div>
@@ -107,6 +121,19 @@
 <% }); %>
 
 </div>
+<!--<h1>Pure CSS Star Rating Widget</h1>-->
+<!-- <fieldset class="rating">
+    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+</fieldset> -->
 <% include partials/footer.ejs %>
 
 

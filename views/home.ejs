@@ -1,19 +1,26 @@
 <% include partials/header.ejs %>
-<div class="container jumbotron jumbotron-fluid" style="background-color:#9e8f8f; margin: 10% auto; text-align:center; width:40%;">
-<div class="container"> <h1 class="display-4">SEARCH ANY MOVIE!</h1>
+<div class="container jumbotron jumbotron-fluid" style="    background-color: #00000094;
+margin: 10% auto;
+text-align: center;
+width: 40%;
+color: white;">
+<div class="container"> <h6 style="font-size: xx-large;" class="display-4">Search Any Movie Series!</h6>
 <!--<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>-->
 <hr class="my-4">
-
+<p><br></p>
 <form method="GET" action="/mymovie">
 <!--<div class="stretch"></div>-->
 <div class="form-group" >
-<input type="text" name="title" placeholder="enter the movie you want to search"  style="width:75%;text-align:center; ">
+<input type="text" name="title" placeholder="enter the series you want to search"  style="width:75%;
+text-align:center;
+ ">
 </div>
 <div class="form-group">
-<button class="btn btn-lg btn-primary "  style="width:75%;">SUBMIT</button>
+<button class="btn btn-md btn-success "  style="width:75%;">SUBMIT</button>
 </div>
 </form>
-
+<p><br>Enter movie to search!<br></p><hr class="my-4">
+<p><br></p>
 <form method="GET" action="/myonlymovie">
 <!--<div class="stretch"></div>-->
 <div class="form-group" >
@@ -23,7 +30,7 @@
 <input type="number" name="y" placeholder="enter the year of release"  style="width:75%;text-align:center; ">
 </div>
 <div class="form-group">
-<button class="btn btn-lg btn-primary "  style="width:75%;">SUBMIT</button>
+<button class="btn btn-md btn-success "  style="width:75%;">SUBMIT</button>
 </div>
 </form>
 
