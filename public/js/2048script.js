@@ -259,7 +259,7 @@ if (box[xa][ya].innerHTML) {continue;}
 //}
     
     
-   sc.innerHTML='SCORE='+eval(score);    
+   sc.innerHTML='SCORE <br>'+eval(score);    
 
     kapil=eval(score);
 console.log("score"+kapil);
@@ -481,18 +481,18 @@ if (box[xa][ya].innerHTML) {continue;}
     
      for (let i = 0; i <= 3; i++) {
             for (let j = 0; j <=3; j++) {
-              if(box[i][j].innerHTML==2){box[i][j].style.backgroundColor="#8180d8";} 
-                if(box[i][j].innerHTML==4){box[i][j].style.backgroundColor="#a360d7";} 
-                if(box[i][j].innerHTML==8){box[i][j].style.backgroundColor="#2669dd";} 
-                if(box[i][j].innerHTML==16){box[i][j].style.backgroundColor="#38b9d6";} 
-                if(box[i][j].innerHTML==32){box[i][j].style.backgroundColor="#57cb9b";} 
-                if(box[i][j].innerHTML==64){box[i][j].style.backgroundColor="#66d02b";} 
-                if(box[i][j].innerHTML==128){box[i][j].style.backgroundColor="#f7c135";} 
-                if(box[i][j].innerHTML==256){box[i][j].style.backgroundColor="#f5812b";} 
+              if(box[i][j].innerHTML==2){box[i][j].style.backgroundColor="rgb(152, 2, 246)";} 
+                if(box[i][j].innerHTML==4){box[i][j].style.backgroundColor="rgb(210, 0, 194)";} 
+                if(box[i][j].innerHTML==8){box[i][j].style.backgroundColor="rgb(254, 199, 43)";} 
+                if(box[i][j].innerHTML==16){box[i][j].style.backgroundColor="rgb(0, 197, 27)";} 
+                if(box[i][j].innerHTML==32){box[i][j].style.backgroundColor="rgb(9, 149, 208)";} 
+                if(box[i][j].innerHTML==64){box[i][j].style.backgroundColor="rgb(20, 223, 130)";} 
+                if(box[i][j].innerHTML==128){box[i][j].style.backgroundColor="rgb(255, 82, 15)";} 
+                if(box[i][j].innerHTML==256){box[i][j].style.backgroundColor="rgb(236, 80, 255);";} 
                 if(box[i][j].innerHTML==512){box[i][j].style.backgroundColor="#f3513c";} 
                 if(box[i][j].innerHTML==1024){box[i][j].style.backgroundColor="#f15591";} 
-                if(box[i][j].innerHTML==2048){box[i][j].style.backgroundColor="#f3453b";} 
-                if(box[i][j].innerHTML==4046){box[i][j].style.backgroundColor="#f3453b";}
+                if(box[i][j].innerHTML==2048){box[i][j].style.backgroundColor="rgb(64, 6, 107)";} 
+                if(box[i][j].innerHTML==4046){box[i][j].style.backgroundColor="rgb(19, 16, 71)";}
                 if(box[i][j].innerHTML>4046){box[i][j].style.backgroundColor="black";}
                 
                 if(!box[i][j].innerHTML){box[i][j].style.backgroundColor="#312c4f";} 
@@ -511,7 +511,7 @@ if (box[xa][ya].innerHTML) {continue;}
 //}
     
     
-   sc.innerHTML='SCORE='+eval(score);
+   sc.innerHTML='SCORE <br><a class="scorenum" style="    display: contents;font-size: -webkit-xxx-large;">'+eval(score)+'</a>';
 //    localStorage.setItem("highscore", score);
 
 //    console.log(eval(score));
@@ -550,5 +550,6 @@ var highscore = localStorage.getItem("highscore");
 
 
 
-  hsc.innerHTML='HIGHSCORE='+eval(localStorage.getItem("highscore"));
+  hsc.innerHTML='HIGHSCORE<br><a class="scorenum" style="    display: contents;font-size: -webkit-xxx-large;">'+eval(localStorage.getItem("highscore"))+'</a>';
+  'SCORE <br><a class="scorenum" style="    display: contents;font-size: -webkit-xxx-large;">'+eval(score)+'</a>';
 console.log("sadsasdaasadsadasdasdsadsaa"+ eval(localStorage.getItem("highscore")));
