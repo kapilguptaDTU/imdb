@@ -16,6 +16,37 @@
         <script src="JQUERYmain.js"></script>
     <style>
        a{color:white;}
+
+/* ....................navbar.................. */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+  }
+
+  /* ....................................navbar end */
    </style>
     </head>
     
@@ -29,11 +60,11 @@
     background-attachment: fixed;">
       
       
-     <nav class=" navbar navbar-light bg-dark " >
+     <!-- <nav class=" navbar navbar-light bg-dark " >
          <div class="container-fluid">
              <div class="navbar-header">
                  <a class="navbar-brand" href="/" >IMDB CLONE</a>
-             </div>
+             </div> -->
                <!--      <div class="nav navbar-right">-->
                          
                <!--      <a class="nav-link" href="/">LOGIN</a>-->
@@ -41,8 +72,15 @@
                <!--      <a class="nav-link" href="/">LOGOUT</a>-->
                <!--</div>-->
              
-         </div>
+         <!-- </div> -->
          
+<ul>
+    <li><a class="active" href="#">IMDb</a></li>
+    <li><a href="https://github.com/kapilguptaDTU">GitHub</a></li>
+    <li><a href="https://drive.google.com/open?id=10rse2RrHe0QHMqX61V8ZGDU8eLTHkEgU">My Resume</a></li>
+    <li style="float:right"><a class="active" href="https://kapilguptadtu.github.io/Web-Store/">My Web Store</a></li>
+  </ul>
+  
          
          
      </nav>
