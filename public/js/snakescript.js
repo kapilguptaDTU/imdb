@@ -142,7 +142,8 @@ function catchMe() {
                 redscreen.innerHTML = 'RED WON:)';
                  flex.classList.toggle("flexer");
                 play.classList.toggle("play-again");
-                play.innerHTML = "RED WON.Play again?";
+                // play.innerHTML = "<p>GAME OVER <br></p>RED WON<br><div><button type=\"button\" class=\"btn btn-success\">Play again</button><button type=\"button\" class=\"btn btn-success\">Try Something Else!!</button></div>";
+                play.innerHTML = "<p>GAME OVER <br></p>RED WON<br><a><a type=\"button\" class=\"btn btn-success\">Play again</a><a type=\"button\" class=\"btn btn-primary\"href=\"https://kapilguptadtu.github.io/Web-Store/\">Try Something Else!!</a></a>";
                 redscreen.innerHTML="";bluescreen.innerHTML="";
             
             }
@@ -227,7 +228,8 @@ function catchMe() {
                 bluescreen.innerHTML = 'BLUE WON:)';
                  flex.classList.toggle("flexer");
                 play.classList.toggle("play-again");
-                play.innerHTML = "BLUE WON.Play again?";
+                // play.innerHTML = "<p>GAME OVER <br></p>BLUE WON.<br><div><a>Play again</a><a>Try Something Else</a></div>";
+                play.innerHTML = "<p>GAME OVER <br></p>BLUE WON<br><a><a type=\"button\" class=\"btn btn-success\">Play again</a><a type=\"button\" class=\"btn btn-primary\"href=\"https://kapilguptadtu.github.io/Web-Store/\">Try Something Else!!</a></a>";
                 redscreen.innerHTML="";bluescreen.innerHTML="";
             }
 
@@ -346,7 +348,7 @@ function catchMe() {
                 redscreen.innerHTML = 'RED WON:)';
                  flex.classList.toggle("flexer");
                 play.classList.toggle("play-again");
-                play.innerHTML = "RED WON.Play again?";
+                play.innerHTML = "<p>GAME OVER <br></p>RED WON<br><a><a type=\"button\" class=\"btn btn-success\">Play again</a><a type=\"button\" class=\"btn btn-primary\"href=\"https://kapilguptadtu.github.io/Web-Store/\">Try Something Else!!</a></a>";
                 redscreen.innerHTML="";bluescreen.innerHTML="";
             
             }
@@ -431,7 +433,7 @@ function catchMe() {
                 bluescreen.innerHTML = 'BLUE WON:)';
                  flex.classList.toggle("flexer");
                 play.classList.toggle("play-again");
-                play.innerHTML = "BLUE WON.Play again?";
+                play.innerHTML = "<p>GAME OVER <br></p>BLUE WON<br><a><a type=\"button\" class=\"btn btn-success\">Play again</a><a type=\"button\" class=\"btn btn-primary\" href=\"https://kapilguptadtu.github.io/Web-Store/\">Try Something Else!!</a></a>";
                 redscreen.innerHTML="";bluescreen.innerHTML="";
             }
 

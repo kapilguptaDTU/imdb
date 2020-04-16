@@ -63,17 +63,50 @@ body{
     align-items: center;
 }
 .play-again{
-    background-color: chocolate;
-    width: 50vw;
-/*    height: 50vh;*/
-        text-align: center;
+    background-color: #1a1515d1;
+    width: 85vw;
+    /* height: 50vh; */
+    text-align: center;
     padding: 18%;
     color: white;
     justify-content: center;
     align-items: center;
+    font-size: 35px;
 }
-.centermeilao{
+/* .centermeilao{
     
+} */
+
+.play-again p{
+
+    font-size: 40px;
+    color: white;
+
+
+}
+
+/* .play-again div{
+
+} */
+
+.play-again a{
+
+    color: white;
+    /* background-color: #4CAF50; */
+    /* display: block; */
+    /* color: white; */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 6vh;
+}
+
+.play-again a button{
+background-color: green;
 }
 .screen {
     display: flex;
