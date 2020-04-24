@@ -29,8 +29,12 @@ app.get('/ab', (req, res) => {
 app.get("/corona",function(req,response){
     
     var country=req.query.country;
+    console.log(country);
+    var c=country.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.substring(1)).join(' '); 
+    console.log(c);
+// var c=country.toString().toLowerCase();
+// console.log(c);
 
-var c=country.toString().toLowerCase();
 // c[0]=c[0].toUpperCase();
 c=c.charAt(0).toUpperCase() + 
 c.slice(1); 
@@ -41,11 +45,11 @@ fetch("https://pomber.github.io/covid19/timeseries.json")
 // <!-- // data[c].forEach(({ date, confirmed, recovered, deaths }) => -->
 // <!-- // response.send(`${date} active cases: ${confirmed - recovered - deaths}`+country) -->
 
-console.log(data.India);
+// console.log(data.India);
 
 var t=Object.keys(data);
 
-console.log(t);
+// console.log(t);
     
     // response.render("zing.ejs",{country:c,data:data});
 var arr=[];
@@ -89,9 +93,9 @@ currConfirmed=d.confirmed
 
 // var currDeaths=data[c].deaths[i-1];
 
-console.log(currDate);
+// console.log(currDate);
     // var currentConfirmed=arr[arr.length()-1];
-    console.log(typeof(arr))
+    // console.log(typeof(arr))
     response.render("zing.ejs",{country:c,data:data,arr:arr,currConfirmed,currDate,currDeaths,currRecovered,index:i});
 
 });
