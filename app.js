@@ -257,13 +257,13 @@ if(parsedData.Response=='True'){
 
 // app.listen(process.env.PORT,process.env.IP);
 // console.log("IMDb started",process.env.PORT,process.env.IP);
-var server = app.listen(5000, function () {
-    var host = server.address().address
-    var port = server.address().port
+// var server = app.listen(5000, function () {
+//     var host = server.address().address
+//     var port = server.address().port
  
-    console.log("Example app listening at http://%s:%s", host, port)
- })
+//     console.log("Example app listening at http://%s:%s", host, port)
+//  })
 
 
-// app.listen(process.env.PORT,process.env.IP);
-// console.log("IMDb V2 started");
+app.listen(process.env.PORT,process.env.IP);
+console.log("IMDb V2 started");
