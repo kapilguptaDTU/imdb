@@ -34,13 +34,19 @@ var c=country.toString().toLowerCase();
 // c[0]=c[0].toUpperCase();
 c=c.charAt(0).toUpperCase() + 
 c.slice(1); 
-
-console.log(c);
-    fetch("https://pomber.github.io/covid19/timeseries.json")
+fetch("https://pomber.github.io/covid19/timeseries.json")
 .then(response => response.json())
 .then(data => {
 // console.log(o);
+// <!-- // data[c].forEach(({ date, confirmed, recovered, deaths }) => -->
+// <!-- // response.send(`${date} active cases: ${confirmed - recovered - deaths}`+country) -->
 
+console.log(data.India);
+
+var t=Object.keys(data);
+
+console.log(t);
+    
     // response.render("zing.ejs",{country:c,data:data});
 var arr=[];
 var i=0;
@@ -53,6 +59,7 @@ else{
     var message='please enter a valid country name';
     response.render("corona.ejs",{message:message});
 }
+
 data[c].forEach((d) =>
 
 arr.push(d.confirmed)
@@ -71,6 +78,9 @@ currRecovered=d.recovered
 data[c].forEach((d) =>
 currDate=d.date
 )
+data[c].forEach((d) =>
+currDate=d.date
+)
 
 data[c].forEach((d) =>
 currConfirmed=d.confirmed
@@ -82,7 +92,7 @@ currConfirmed=d.confirmed
 console.log(currDate);
     // var currentConfirmed=arr[arr.length()-1];
     console.log(typeof(arr))
-    response.render("zing.ejs",{country:c,data:data,arr:arr,currConfirmed,currDate,currDeaths,currRecovered});
+    response.render("zing.ejs",{country:c,data:data,arr:arr,currConfirmed,currDate,currDeaths,currRecovered,index:i});
 
 });
 });

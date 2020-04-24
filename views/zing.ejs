@@ -54,6 +54,9 @@
 
 <!-- <div id="<%=arr%>"></div> -->
 <div id="mydivs" data-test=<%= arr %>></div>
+<div id="currNumberToPlotOnGraph" data-test=<%= currConfirmed %>></div>
+<div id="indexer" data-test=<%= index %>></div>
+
 <div class="row" >
         <%  data[country].forEach(function( d ){%>
           
@@ -83,8 +86,27 @@
 <script>
         
         var test = document.getElementById('mydivs').dataset.test;
+        var ToPlotOnGraph=document.getElementById('currNumberToPlotOnGraph').dataset.test;
+        var totaldays=document.getElementById('indexer').dataset.test;
+      
+        var tt=parseInt(ToPlotOnGraph, 10);
+        totaldays=parseInt(totaldays, 10)+1;
+        console.log(tt);
+
+        tt+=500;
+        console.log(tt);
+
+        console.log(totaldays);
         var testArr=test.split(',').map(Number);
         console.log(testArr);
+
+        var strmainforylabel="0";
+        var strmainforxlabel="0";
+        
+        strmainforylabel+=":"+tt+":"+200;
+        
+        strmainforxlabel+=":"+(totaldays)+":1";
+        console.log( strmainforxlabel);
         
             let chartData = {
              title:{text:'Rate of growth of virus measured from 22 Jan 2020'},
@@ -92,13 +114,13 @@
               
               'scale-x': {
                   label:{text:'Days (Day 0 indicate 22 Jan 2020)'},
-            values: "0:100:1",
+            values:        strmainforxlabel,
             format: "Day %v"
           },
           'scale-y': {
             label:{text:'Number of corona cases'},
             
-            values: "0:30000:200",
+            values: strmainforylabel,
             
             format: "%v",
             
