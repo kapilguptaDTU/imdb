@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Script Reference [1] -->
+  <script src="https://cdn.zingchart.com/dev/zingchart.min.js"></script> 
+ 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/normal.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/rating.css">
+ 
+  <style>
+        .twocharts{
+            display: flex;
+            flex-direction: row;
+
+        }
+        #myCharta{
+            background-color: white;
+        }
+</style> 
+</head>
+<body>
+        <div class="container con-center">
+             
+              <a class="btn btn-primary" href="/coronaNew" role="button">Search different Country!</a>
+              <div class="f"style="display:flex;align-items:center;justify-content:center;flex-direction:column;">
+                                <H1 style="color:white;font-size:100px;"><%=country%>'s data</H1>
+</div>
+                                <%var ar=arr%>
+
+<div class="chart" >
+        <div id="myChart"></div>
+        
+
+</div>
+<div class="f"style="display:flex;align-items:center;justify-content:center;flex-direction:column;">
+<div class="card curr-card" style="text-align:center;color:black;background-color:white;"> 
+    <h2 >Current Situation</h2>   
+    <p>DATE: <%=currDate%></p>
+        <p>CONFIRMED: <%=currConfirmed%></p>
+        <p>DEATHS: <%=currDeaths%></p>
+        <p>RECOVERED:<%=currRecovered%></p>
+        <p>ACTIVE: <%=currConfirmed-currDeaths-currRecovered%></p>
+    </div>
+        
+    <h2 style="color:white;">HISTORICAL DATA (FROM 22 JAN 2020 TILL TODAY)</h2>
+
+
+</div>
+
+<!-- <div id="<%=arr%>"></div> -->
+<div id="mydivs" data-test=<%= arr %>></div>
+<div class="row" >
+        <%  data[country].forEach(function( d ){%>
+          
+        
+          
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+             
+                 <div class="card"> 
+                        <p>DATE: <%=d.date%></p>
+                        <p>CONFIRMED: <%=d.confirmed%></p>
+                        <p>DEATHS: <%=d.deaths%></p>
+                        <p>RECOVERED:<%=d.recovered%></p>
+                        <p>ACTIVE: <%=d.confirmed-d.deaths-d.recovered%></p>
+                        
+                        
+                
+                
+            </div>
+            </div>
+          
+        
+        <% }) %>
+        
+</div>
+
+
+<script>
+        
+        var test = document.getElementById('mydivs').dataset.test;
+        var testArr=test.split(',').map(Number);
+        console.log(testArr);
+        
+            let chartData = {
+             title:{text:'Rate of growth of virus measured from 22 Jan 2020'},
+              type: 'area',
+              
+              'scale-x': {
+                  label:{text:'Days (Day 0 indicate 22 Jan 2020)'},
+            values: "0:100:1",
+            format: "Day %v"
+          },
+          'scale-y': {
+            label:{text:'Number of corona cases'},
+            
+            values: "0:30000:200",
+            
+            format: "%v",
+            
+            guide: {
+              'line-style': "dashdot"
+            }
+          },
+              series: [
+                {
+                  values: testArr
+                }
+              ]
+            };
+            zingchart.render({ 
+              id: 'myChart',
+              data: chartData,
+              height: 400,
+              width: '100%',
+              overflow: 'scroll'
+            });
+          </script>
+      
+      
+
+
+      
+
+
+
+</body>
+</html>

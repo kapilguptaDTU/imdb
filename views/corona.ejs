@@ -1,0 +1,30 @@
+<% include partials/header.ejs %>
+<h1 style="color:red;"><%=message%></h1>
+<div class="container jumbotron jumbotron-fluid" style="    background-color: #00000094;
+margin: 10% auto;
+text-align: center;
+width: 40%;
+color: white;">
+<div class="container"> <h6 style="font-size: xx-large;" class="display-4">Search Any Country!</h6>
+<!--<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>-->
+<hr class="my-4">
+<p><br></p>
+<form method="GET" action="/corona">
+<!--<div class="stretch"></div>-->
+<div class="form-group" >
+<input type="text" name="country" placeholder="enter the country data you want to search"  style="width:75%;
+text-align:center;color:black;
+ ">
+</div>
+<div class="form-group">
+<button class="btn btn-md btn-success "  style="width:75%;">SUBMIT</button>
+</div>
+</form>
+
+
+</div>
+</div>
+
+
+
+<% include partials/footer.ejs %>
